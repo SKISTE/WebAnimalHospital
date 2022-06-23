@@ -15,4 +15,10 @@
 .header ion-icon{
 	padding: 20px;
 	font-size: 20pt;
+	cursor: pointer;
+	transition: .3s;
+}
+.header ion-icon:focus, .header ion-icon:hover{
+	transform: rotate(-90deg);
+	transition: .3s;
 }
