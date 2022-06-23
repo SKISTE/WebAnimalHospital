@@ -1,0 +1,121 @@
+html {
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+video {
+  pointer-events: none;
+}
+head {
+  display: none;
+}
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  flex-shrink: 0;
+  transform-origin: center top;
+  overflow: auto;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+head {
+  display: none;
+}
+
+button:active,
+button:focus {
+  outline: none !important;
+}
+
+button::-moz-focus-inner {
+  border: 0 !important;
+}
+
+html,
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+}
+
+html {
+  font-size: 17px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+html,
+body {
+  background: #000;
+  color: #fff;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-y: scroll;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+.none {
+  display: none;
+}
+
+html {
+  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  /* chrome based */
+  width: 0px;
+  /* ширина scrollbar'a */
+  background: transparent;
+  /* опционально */
+}
+html {
+  -ms-overflow-style: none;
+  /* IE 10+ */
+  scrollbar-width: none;
+  /* Firefox */
+}
+* {
+  margin: 0;
+  padding: 0;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-scrollbar: none;
+  height: auto;
+}
+#Game {
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  line-height: 1;
+  color: #fff;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: #ffffff;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

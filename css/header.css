@@ -1,0 +1,18 @@
+.header{
+	background: var(--accent2);
+	width: 100%;
+	margin: 0px;
+	height: 10%;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+}
+.header p{
+	margin: 0;
+	font-size: 20pt;
+	padding: 20px;
+}
+.header ion-icon{
+	padding: 20px;
+	font-size: 20pt;
+}

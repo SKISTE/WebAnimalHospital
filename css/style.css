@@ -1,0 +1,20 @@
+:root{
+	--accent: #59BA6D;
+	--accent2: #3B7A47;
+	--accent3: #78FA92;
+	--accent4: #1C3B22;
+	--accent5: #6CE083;
+}
+body{
+	#background: gray;
+	margin: 0;
+	padding: 0;
+}
+#input_zone{
+	position: relative;
+	background: red;
+	border-radius: 10%;
+}
+#added_zone{
+	
+}

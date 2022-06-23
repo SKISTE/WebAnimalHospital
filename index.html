@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--
+	<script type="text/javascript" src='js/resize.js'></script>
+	<link rel="stylesheet" type="text/css" href="css/forresize.css"> 
+	-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/wrapper.css">
+	<link rel="stylesheet" type="text/css" href="css/dropdown.css">
+	<script type="text/javascript" src="js/dropdown.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<title>WebHospital</title>
+</head>
+<body>
+	<div class="header">
+		<p>WebHospital</p>
+		<ion-icon name="ellipsis-vertical"></ion-icon>
+	</div>
+	<div class="wrapper">
+		<h1>Тип животного</h1>
+		<input type="text" onclick="GoDropdownMenu()" class="dropbtn" id='AnimalType'>
+		<div id="myDropdown" class="dropdown-content">
+			<a href="#" onclick="EnterValue('Собака')">Собака</a>
+			<a href="#" onclick="EnterValue('Кошка')">Кошка</a>
+			<a href="#" onclick="EnterValue('Крупно рогатый скот')">Крупно рогатый скот</a>
+			<a href="#" onclick="EnterValue('Мелко рогатый скот')">Мелко рогатый скот</a>
+			<a href="#" onclick="EnterValue('Птица')">Птица</a>
+		</div>
+		<h1>Возраст</h1>
+		<input type="text" class="dropbtn" id='AnimalAge'>
+	</div>
+</body>
+</html>
