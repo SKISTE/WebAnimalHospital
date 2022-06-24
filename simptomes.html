@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WebHospital - Simptomes</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/header.css">
+	<link rel="stylesheet" type="text/css" href="css/wrapper.css">
+	<link rel="stylesheet" type="text/css" href="css/dropdown.css">
+	<link rel="stylesheet" type="text/css" href="css/simptomes.css">
+	<script type="text/javascript" src="js/dropdown.js"></script>
+	
+	<script type="text/javascript" src="js/onpreload.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+	<div class="header">
+		<p>WebHospital</p>
+		<ion-icon name="ellipsis-vertical" onclick='GoSomeSettings()' class='Settings'></ion-icon>
+		<div id="Settings" class="dropdown-content1">
+			<a href="#" onclick="Authors()">Авторы</a>
+		</div>
+	</div>
+	<div class="wrapper">
+		<input type="text" name="" class='simptomes_textarea' id='Simptomes_textarea'>
+		<div class="simptomes">
+			<div class="simptome">Головная боль</div>
+			<div class="simptome simptomes_shown">Спазм</div>
+			<div class="simptome simptomes_shown">Колики в животике</div>
+			<div class="simptome simptomes_shown">Жидкий стул</div>
+			<div class="simptome simptomes_shown">Попе больно</div>
+			<div class="simptome simptomes_shown">Попе больно</div>
+			<div class="simptome simptomes_shown">Попе больно</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/simptomes.js"></script>
+</body>
+</html>

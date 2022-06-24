@@ -1,0 +1,44 @@
+.simptomes_textarea:hover, .simptomes_textarea:focus {
+	background: var(--accent);
+	transition: .3s;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	color: white;
+	border-left: 6px solid var(--accent2);
+	border-right: 6px solid var(--accent2);
+}
+body{
+	overflow-x: none;
+}
+.simptomes_textarea{
+	transition: .3s;
+	border: none;
+	width: 90%;
+	font-size: 16pt;
+	margin-top: 10px;
+	height: 5vh;
+	border-bottom: 4px solid var(--accent2);
+}
+.simptomes{
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	white-space: nowrap;
+	width: 90%;
+	margin-top: 5px;
+	#padding-left: 10%;
+	font-size: 14pt;
+}
+.simptomes div:not(:last-child){
+	margin-right: 5px;
+}
+.simptomes div{
+	padding: 3px;
+	border-radius: 10px;
+	display: flex;
+	border: 2px solid var(--accent);
+}
+.simptomes_shown{
+	display: none !important;
+	border: 100px solid black;
+}
