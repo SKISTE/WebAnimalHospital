@@ -7,7 +7,12 @@
 	display: flex;
 	justify-content: space-between;
 }
-.header p{
+.header a:active{
+	color: white;
+}
+.header a{
+	text-decoration: none;
+	color: white;
 	margin: 0;
 	font-size: 20pt;
 	padding: 20px;
