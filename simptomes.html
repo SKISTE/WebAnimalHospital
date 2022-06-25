@@ -18,7 +18,7 @@
 <body>
 	<div class="header">
 		<p>WebHospital</p>
-		<ion-icon name="ellipsis-vertical" onclick='GoSomeSettings()' class='Settings'></ion-icon>
+		<span onclick='GoSomeSettings()'><ion-icon name="ellipsis-vertical" class='Settings'></ion-icon></span>
 		<div id="Settings" class="dropdown-content1">
 			<a href="#" onclick="Authors()">Авторы</a>
 		</div>
@@ -26,15 +26,22 @@
 	<div class="wrapper">
 		<input type="text" name="" class='simptomes_textarea' id='Simptomes_textarea'>
 		<div class="simptomes">
-			<div class="simptome">Головная боль</div>
-			<div class="simptome simptomes_shown">Спазм</div>
-			<div class="simptome simptomes_shown">Колики в животике</div>
-			<div class="simptome simptomes_shown">Жидкий стул</div>
-			<div class="simptome simptomes_shown">Попе больно</div>
-			<div class="simptome simptomes_shown">Попе больно</div>
-			<div class="simptome simptomes_shown">Попе больно</div>
+			<div class="simptome" onclick="AddSimptome(1)">Гиперемия</div>
+			<div class="simptome" onclick="AddSimptome(2)">Кашель</div>
+			<div class="simptome" onclick="AddSimptome(3)">Чихание</div>
+			<div class="simptome" onclick="AddSimptome(4)">Светобоязнь</div>
+			<div class="simptome" onclick="AddSimptome(5)">Саливация</div>
+			<div class="simptome" onclick="AddSimptome(6)">Апатия</div>
+			<div class="simptome" onclick="AddSimptome(7)">Вялость</div>
+			<div class="simptome" onclick="AddSimptome(8)">Одышка</div>
+			<div class="simptome" onclick="AddSimptome(9)">Потеря аппетита</div>
 		</div>
+		<div style='display: none;' id='added_simptomes_id'></div>
+		<input type="button" name="" value="Добавленные симптомы" onclick="ShowPopup()" class="added_simptomes">
+		<div id='Added_simptomes_window'><ion-icon name="close-outline" class='button_for_close' onclick='ClosePopup()'></ion-icon><br><br>Здесь будут добавленные симптомы с возможностью их удаления, но я чет подзаебался, поэтому пук</div>
 	</div>
+	<script type="text/javascript" src="js/massiv.js"></script>
 	<script type="text/javascript" src="js/simptomes.js"></script>
+	
 </body>
 </html>

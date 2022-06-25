@@ -11,6 +11,7 @@
 	margin: 0;
 	font-size: 20pt;
 	padding: 20px;
+	user-select: none;
 }
 .header ion-icon{
 	padding: 20px;
