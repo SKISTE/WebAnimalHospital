@@ -153,7 +153,6 @@ function CreatePointForListBoleznei(num){
   for (var i = bolezni_list[type][num].simptomes.length - 1; i >= 0; i--) {
     if(tmp1 < 4){
       tmp = tmp + simptomes_list[bolezni_list[type][num].simptomes[i]]+','
-      console.log('ff')
       tmp1 = tmp1 + 1
     }
     else{
@@ -193,19 +192,12 @@ function CheckBolezni() {
   console.time()
   ClearBolezniList()
   let temparray = document.getElementById('added_simptomes_id').innerHTML.split(',');
-  var maybe = new Array();
-  var bool = true;
-  console.log(Object.keys(bolezni_list[type]).length)
   for (var i = Object.keys(bolezni_list[type]).length - 1; i >= 0; i--) {
     let intersection = temparray.filter((x) => !bolezni_list[type][i+1]['simptomes'].includes(x));
-    console.log(intersection)
     if (intersection == ![]) {
       CreatePointForListBoleznei(i+1)
-      console.log('Нашлось!')
     }
   }
-  //console.log(maybe)
-
   console.timeEnd()
 }
 
@@ -220,12 +212,16 @@ if(get != '') {
     for(var i=0; i < tmp.length; i++) {
         tmp2 = tmp[i].split('=');
         param[tmp2[0]] = tmp2[1];
-        console.log(tmp2[0], tmp2[1])
     }
 }
 var type = Number(param['type']);
-//const age = param['age'];
-//console.log(`Обрабатываем животного - "${typee}", возрастом - ${age}`);
-
-console.log(bolezni_list[1]);
-console.log(bolezni_list[type]);
+const age = param['age'];
+console.log(`Обрабатываем животного - "${type}", возрастом - ${age}`);
+var tmp11 = document.getElementById('header_name')
+console.log()
+tmp11.innerHTML = (type == 1) ? 'Собака' :
+  (type == 2) ? 'Кошка' :
+  (type == 3) ? 'Крупно рогатый скот' :
+  (type == 4) ? 'Мелко рогатый скот' :
+  (type == 5) ? 'Птица' :
+  'Карманная вет.клиника'

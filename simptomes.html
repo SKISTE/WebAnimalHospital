@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div class="header">
-		<a href="index.html">Карманная вет.клиника</a>
+		<a href="index.html" id='header_name'>Карманная вет.клиника</a>
 		<span onclick='GoSomeSettings()'><ion-icon name="ellipsis-vertical" class='Settings'></ion-icon></span>
 		<div id="Settings" class="dropdown-content1">
 			<a href="#" onclick="Authors()">Авторы</a>
@@ -46,15 +46,8 @@
 			<div style="position:absolute;background: #999999; top: 10px;width: 20%; height: 10px; left: 40%;border-radius: 20px;"></div>
 
 			<div id='bolezni_list'>
-				<div class="block_with_bolezn">
-					<div class="text_bolezn">
-						<div class="bolezn_name">Бешенство</div>
-						<div class="bolezn_simptomes">Пневмония, слюноотделение, какать больно, спермотоксикоз, насрал в кувшин</div>
-					</div>
-					<ion-icon name="help-circle-outline" class='bolezn_info' onclick='GoInfoWindow(1)'></ion-icon>
-				</div>
 			</div>
-			
+
 		</div>
 	</div>
 	<script type="text/javascript" src="js/massiv.js"></script>
