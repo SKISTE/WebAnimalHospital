@@ -52,6 +52,7 @@ function GoToSimptomes() {
 
 
 window.onclick = function(event) {
+  console.log('click')
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;

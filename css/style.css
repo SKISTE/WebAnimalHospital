@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap');
+
 :root{
 	--accent: #59BA6D;
 	--accent2: #3B7A47;
@@ -15,6 +17,44 @@ body{
 	background: red;
 	border-radius: 10%;
 }
-#added_zone{
-	
+*{
+	user-select: none;
+	font-family: 'Exo 2', sans-serif;
+}
+.popup_message{
+	position: absolute;
+	height: 7vh;
+	width: 95vw;
+	margin-top: 2.5%;
+	margin-left: 2.5%;
+	background: var(--accent4);
+	opacity: .95;
+	animation: popup 2s;
+	z-index: 1;
+}
+@keyframes popup{
+	0%{transform: translateY(-200px);}
+	20%{transform: translateY(10px);}
+	80%{transform: translateY(10px);}
+	100%{transform: translateY(-200px);}
+}
+.popup_dur{
+	position: absolute;
+	height: 4px;
+	width: 100%;
+	bottom: -4px;
+	background: var(--accent3);
+	animation: popupdur 2s ease-in-out;
+}
+@keyframes popupdur{
+	0%{width: 100%;}
+	85%{width: 0%;}
+}
+.popup_text{
+	color: white;
+	font-size: 14pt;
+	padding-bottom: 50px;
+	text-align: center;
+	width: 100%;
+	height: 100%;
 }

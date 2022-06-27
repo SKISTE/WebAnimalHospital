@@ -1,86 +1,178 @@
-
-
 var input = document.getElementById('Simptomes_textarea');
-input.oninput = function() {
-    for (var i = document.getElementsByClassName('simptome').length - 1; i >= 0; i--) {
-      var tag = document.getElementsByClassName('simptome')[i].innerHTML.toLowerCase()
-      if (tag.indexOf(input.value.toLowerCase())){
-        document.getElementsByClassName('simptome')[i].classList.add('simptomes_shown')
-      }
-      else{
-        document.getElementsByClassName('simptome')[i].classList.remove('simptomes_shown')
-      }
-      
+function updatesimptomes() {
+  for (var i = document.getElementsByClassName('simptome').length - 1; i >= 0; i--) {
+    var tag = document.getElementsByClassName('simptome')[i].innerHTML.toLowerCase()
+    if (tag.indexOf(input.value.toLowerCase())){
+      document.getElementsByClassName('simptome')[i].classList.add('simptomes_shown')
     }
-  };
+    else{
+      document.getElementsByClassName('simptome')[i].classList.remove('simptomes_shown')
+    }
+    
+  }
+}
+input.oninput = updatesimptomes;
 
 function get_added_ids() {
-  print(document.getElementById('added_simptomes_id').innerHTML)
+  return `${document.getElementById('added_simptomes_id').innerHTML}`
 }
 
 function print(txt){
   console.log(txt)
 }
+function ShowPopupMessage(text) {
+  var div = document.createElement('div')
+  var div1 = document.createElement('div')
+  var p = document.createElement('p')
+
+  div.classList.add('popup_message')
+  div1.classList.add('popup_dur')
+  p.classList.add('popup_text')
+
+  p.innerHTML = text
+
+  div.prepend(div1)
+  div.prepend(p)
+  document.body.prepend(div)
+
+  setTimeout(
+    () => {
+      div.remove()
+    },
+    2000
+  );
+}
 
 function AddSimptome(num){
+
   var div = document.getElementById('added_simptomes_id')
-  let temp = div.innerHTML.split(' ')
-  if (temp.includes(num.toString())) {
-    alert('Данный симптом уже имеется')
+  var added_simptomes = div.innerHTML.split(',')
+  if (added_simptomes[0] == ""){
+    added_simptomes.pop()
   }
-  else{
-    div.innerHTML = div.innerHTML+num+' '
-    var div = document.getElementById('spisok_blyat')
+  added_simptomes.push(num.toString())
+  div.innerHTML = added_simptomes.toString()
 
-    let tag1 = document.createElement('div')
-    let tag2 = document.createElement('div')
-    let tag3 = document.createElement('ion-icon')
+  var div = document.getElementById('spisok_blyat')
 
-    tag1.classList.add('block_with_simptome')
-    tag2.classList.add('text_for_added_simptome')
-    tag3.classList.add('button_for_remove')
+  let tag1 = document.createElement('div')
+  let tag2 = document.createElement('div')
+  let tag3 = document.createElement('ion-icon')
 
-    tag3.setAttribute('name','close-circle-outline')
-    tag3.setAttribute('onclick','RemoveSimptome('+num+')')
+  tag1.classList.add('block_with_simptome')
+  tag2.classList.add('text_for_added_simptome')
+  tag3.classList.add('button_for_remove')
 
+  tag3.setAttribute('name','close-circle-outline')
+  tag3.setAttribute('onclick','RemoveSimptome('+num+')')
 
+  tag2.innerHTML = simptomes_list[num]
 
-    tag2.innerHTML = simptomes_list[num]
-
-    tag1.prepend(tag3)
-    tag1.prepend(tag2)
-    div.prepend(tag1)
+  tag1.prepend(tag3)
+  tag1.prepend(tag2)
+  div.prepend(tag1)
+  for (var i = document.getElementsByClassName('simptome').length - 1; i >= 0; i--) {
+    var div = document.getElementsByClassName('simptome')[i]
+    if (div.innerHTML==simptomes_list[num]){
+      div.remove()
+    }
   }
+  document.getElementById('Simptomes_textarea').value = ''
+  updatesimptomes()
+  ShowPopupMessage('Добавлен симптом "'+simptomes_list[num]+'"')
+  CheckBolezni()
 }
 function RemoveSimptome(num) {
   var div = document.getElementsByClassName('block_with_simptome')
   for (var i = div.length - 1; i >= 0; i--) {
     let temp = div[i].getElementsByClassName('text_for_added_simptome')[0].innerHTML
     if (temp == simptomes_list[num]) {
+      ShowPopupMessage('Удален симптом "'+temp+'"')
       div[i].remove()
+      var div = document.createElement('div')
+      div.innerHTML = simptomes_list[num]
+      div.setAttribute('onclick','AddSimptome('+num+')')
+      div.classList.add('simptome')
+      document.getElementById('list_simptomes').prepend(div)
     }
   }
   var div = document.getElementById('added_simptomes_id')
-  var temp = div.innerHTML.split(' ')
-  print(temp)
+  var temp = div.innerHTML.split(',')
   var temp1 = temp.indexOf(num.toString())
-  print(temp1)
-  temp.splice(temp1,temp1)
-  div.innerHTML = ''
-  print(temp)
-  for (var i = temp.length - 1; i >= 0; i--) {
-    div.innerHTML = div.innerHTML+' '+temp[i]
-    print(div.innerHTML)
+  if (temp.length > 1){
+    temp.splice(temp1,temp1)
   }
+  else{
+    temp = []
+  }
+  div.innerHTML = temp.toString()
+  CheckBolezni()
 }
 function ShowPopup(){
-  document.getElementById('Added_simptomes_window').style.opacity = 1
+  //document.getElementById('Added_simptomes_window').style.opacity = 1
+  document.getElementById('Added_simptomes_window').style.animation = 'slideuptocenter .4s ease-in-out'
   document.getElementById('Added_simptomes_window').style.display = 'block'
+
 }
 function ClosePopup(){
-  document.getElementById('Added_simptomes_window').style.opacity = 0
   document.getElementById('Added_simptomes_window').style.display = 'none'
 }
+  
+
+function CloseInfoWindow(){
+  document.getElementById('Info_window').style.display='none'
+}
+
+function GoInfoWindow(num){
+  document.getElementById('Info_header_name').innerHTML = bolezni_list[type][num].name
+  document.getElementById('info_text').innerHTML = bolezni_list[type][num].desc
+  document.getElementById('Info_window').style.animation = 'slideuptocenter .4s ease-in-out'
+  document.getElementById('Info_window').style.display = 'block'
+}
+
+function CreatePointForListBoleznei(num){
+  var finded_block = document.getElementById('bolezni_list')
+
+  let div1 = document.createElement('div')
+  let div2 = document.createElement('div')
+  let div2_1 = document.createElement('div')
+  let div2_2 = document.createElement('div')
+  let ionicon = document.createElement('ion-icon')
+
+  div1.classList.add('block_with_bolezn')
+  div2.classList.add('text_bolezn')
+  div2_1.classList.add('bolezn_name')
+  div2_2.classList.add('bolezn_simptomes')
+  ionicon.classList.add('bolezn_info')
+
+  ionicon.setAttribute('onclick',`GoInfoWindow(${num})`)
+  ionicon.setAttribute('name','help-circle-outline')
+
+  var tmp = new String()
+  var tmp1 = 0
+  for (var i = bolezni_list[type][num].simptomes.length - 1; i >= 0; i--) {
+    if(tmp1 < 4){
+      tmp = tmp + simptomes_list[bolezni_list[type][num].simptomes[i]]+','
+      console.log('ff')
+      tmp1 = tmp1 + 1
+    }
+    else{
+      tmp = tmp + '...'
+      break
+    }
+  }
+
+  div2_1.innerHTML = bolezni_list[type][num].name
+  div2_2.innerHTML = tmp
+
+  div2.prepend(div2_2)
+  div2.prepend(div2_1)
+  div1.prepend(ionicon)
+  div1.prepend(div2)
+  finded_block.prepend(div1)
+
+}
+
 for (var i = Object.keys(simptomes_list).length - 1; i >= 0; i--) {
   let div = document.getElementById('list_simptomes')
   let liFirst = document.createElement('div');
@@ -89,3 +181,51 @@ for (var i = Object.keys(simptomes_list).length - 1; i >= 0; i--) {
   liFirst.setAttribute('onclick','AddSimptome('+(i+1)+')') 
   div.prepend(liFirst);
 }
+
+function ClearBolezniList(){
+  var finded = document.getElementsByClassName('block_with_bolezn')
+  for (var i = finded.length - 1; i >= 0; i--) {
+    finded[i].remove()
+  }
+}
+
+function CheckBolezni() {
+  console.time()
+  ClearBolezniList()
+  let temparray = document.getElementById('added_simptomes_id').innerHTML.split(',');
+  var maybe = new Array();
+  var bool = true;
+  console.log(Object.keys(bolezni_list[type]).length)
+  for (var i = Object.keys(bolezni_list[type]).length - 1; i >= 0; i--) {
+    let intersection = temparray.filter((x) => !bolezni_list[type][i+1]['simptomes'].includes(x));
+    console.log(intersection)
+    if (intersection == ![]) {
+      CreatePointForListBoleznei(i+1)
+      console.log('Нашлось!')
+    }
+  }
+  //console.log(maybe)
+
+  console.timeEnd()
+}
+
+
+var tmp = new Array();
+var tmp2 = new Array();
+var param = new Array();
+
+var get = location.search;
+if(get != '') {
+    tmp = (get.substr(1)).split('&');
+    for(var i=0; i < tmp.length; i++) {
+        tmp2 = tmp[i].split('=');
+        param[tmp2[0]] = tmp2[1];
+        console.log(tmp2[0], tmp2[1])
+    }
+}
+var type = Number(param['type']);
+//const age = param['age'];
+//console.log(`Обрабатываем животного - "${typee}", возрастом - ${age}`);
+
+console.log(bolezni_list[1]);
+console.log(bolezni_list[type]);
