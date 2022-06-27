@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&display=swap');
+
 
 :root{
 	--accent: #59BA6D;
@@ -19,7 +19,7 @@ body{
 }
 *{
 	user-select: none;
-	font-family: 'Exo 2', sans-serif;
+#	font-family: 'Exo 2', sans-serif;
 }
 .popup_message{
 	position: absolute;
