@@ -1,0 +1,177 @@
+.simptomes_textarea:hover, .simptomes_textarea:focus {
+	background: var(--accent);
+	transition: .3s;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	color: white;
+	border-left: 6px solid var(--accent2);
+	border-right: 6px solid var(--accent2);
+}
+body{
+	overflow-x: none;
+}
+.simptomes_textarea{
+	transition: .3s;
+	border: none;
+	width: 90%;
+	font-size: 16pt;
+	margin-top: 10px;
+	height: 5vh;
+	border-bottom: 4px solid var(--accent2);
+}
+.simptomes{
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	white-space: nowrap;
+	width: 90%;
+	margin-top: 5px;
+	#padding-left: 10%;
+	font-size: 14pt;
+}
+.simptomes div:not(:last-child){
+	margin-right: 5px;
+}
+.simptomes div{
+	user-select: none;
+	padding: 3px;
+	border-radius: 10px;
+	display: flex;
+	border: 2px solid var(--accent);
+}
+.simptomes_shown{
+	display: none !important;
+	border: 100px solid black;
+}
+.added_simptomes{
+	background: none;
+	margin-top: 10px;
+	font-size: 12pt;
+	border: 2px solid var(--accent);
+	padding: 5px;
+}
+#Added_simptomes_window{
+	display: none;
+	opacity: 1;
+	transition: .3s;
+	position: absolute;
+	width: 90vw;
+	height: 90vh;
+	z-index: 3;
+	background: #fff;
+	box-shadow: 0 0 100px rgba(0,0,0,1);
+	animation: slideuptocenter .4s ease-in-out;
+	transform-origin: 50% 0;
+}
+@keyframes slideuptocenter{
+	0%{transform: scale(0);display: block;},
+	100%{transform: translateY(1);}
+}
+@keyframes slidecentertoup{
+	0%{transform: ;},
+	100%{transform: translateY(-100vh);}
+}
+.button_for_close:hover, .button_for_close:focus{
+	transform: rotate(180deg);
+	transition: .3s;
+	color: var(--accent3);
+}
+.button_for_close{
+	transition: .3s;
+	color: var(--accent4);
+	position: absolute;
+	right: 0;
+	font-size: 36pt;
+}
+.block_with_simptome{
+	display: flex;
+	padding-left: 10px;
+	justify-content: space-between;
+	border-bottom: 1px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.text_for_added_simptome{
+	color: black;
+	font-size: 20pt;
+	width: 90%;
+}
+.button_for_remove{
+	font-size: 25pt;
+	margin-left: 50px;
+	color: var(--accent2);
+	width: 10%;
+}
+#spisok_blyat{
+	margin-top: 50px;
+	overflow-x: scroll;
+	#background: red;
+	height: calc(100% - 50px);
+}
+.block_with_list_bolezni{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	height: 70%;
+	overflow-y: scroll;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	border-top: 3px solid black;
+	background: #e6e6e6;
+}
+#bolezni_list{
+	margin-top: 40px;
+	height: calc(100% - 40px);
+}
+.block_with_bolezn{
+	display: flex;
+	border-bottom: 1px solid black;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	justify-content: space-between;
+	width: 100%;
+}
+.text_bolezn{
+	display: flex;
+	width: 90%;
+	padding-left: 10px;
+	flex-direction: column;
+}
+.bolezn_name{
+	font-size: 20pt;
+}
+.bolezn_simptomes{
+	font-size: 10pt;
+}
+.bolezn_info{
+	font-size: 25pt;
+	width: 10%;
+	align-items: center;
+}
+.header_for_info_window{
+	display: flex;
+	width: 100%;
+	min-height: 10%;
+	justify-content: space-between;
+}
+.header_for_info_window ion-icon{
+	width: 10%;
+}
+.header_for_info_window div{
+	font-size: 19pt;
+	padding: 10px 0 0 10px;
+	width: 90%;
+}
+#Info_window{
+	display: none;
+	position: absolute;
+	width: 90%;
+	height: 90%;
+	background: white;
+	border: 3px solid black;
+	z-index: 2;
+	box-shadow: 0 0 100px rgba(0,0,0,1);
+}
+#info_text{
+	padding-left: 10px;
+}
