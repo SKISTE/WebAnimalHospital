@@ -35,8 +35,8 @@ body{
 }
 @keyframes popup{
 	0%{transform: translateY(-200px);}
-	20%{transform: translateY(10px);}
-	80%{transform: translateY(10px);}
+	20%{transform: translateY(0px);}
+	80%{transform: translateY(0px);}
 	100%{transform: translateY(-200px);}
 }
 .popup_dur{
