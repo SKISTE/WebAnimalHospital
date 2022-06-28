@@ -29,6 +29,8 @@ function ShowPopupMessage(text) {
   div1.classList.add('popup_dur')
   p.classList.add('popup_text')
 
+  div.style.zIndex = 10
+
   p.innerHTML = text
 
   div.prepend(div1)
@@ -110,17 +112,18 @@ function RemoveSimptome(num) {
 }
 function ShowPopup(){
   //document.getElementById('Added_simptomes_window').style.opacity = 1
-  document.getElementById('Added_simptomes_window').style.animation = 'slideuptocenter .4s ease-in-out'
+  document.getElementById('Added_simptomes_window').style.animation = 'slideuptocenter .4s ease-in-out forwards'
   document.getElementById('Added_simptomes_window').style.display = 'block'
 
 }
 function ClosePopup(){
-  document.getElementById('Added_simptomes_window').style.display = 'none'
+  //document.getElementById('Added_simptomes_window').style.display = 'none'
+  document.getElementById('Added_simptomes_window').style.animation = 'slidecentertoup .4s ease-in-out forwards'
 }
   
 
 function CloseInfoWindow(){
-  document.getElementById('Info_window').style.display='none'
+  document.getElementById('Info_window').style.animation='slidecentertoup .4s ease-in-out forwards'
 }
 
 function GoInfoWindow(num){
@@ -199,6 +202,15 @@ function CheckBolezni() {
     }
   }
   console.timeEnd()
+}
+
+function OpenBolezniList(){
+  document.getElementById('block_with_list_bolezni').style.animation = 'unpack_bolezni .4s ease-in-out forwards';
+  document.getElementById('button_for_close_open_bolezni').setAttribute('onclick','CloseBolezniList()');
+}
+function CloseBolezniList(){
+  document.getElementById('block_with_list_bolezni').style.animation = 'pack_bolezni .4s ease-in-out forwards';
+  document.getElementById('button_for_close_open_bolezni').setAttribute('onclick','OpenBolezniList()');
 }
 
 
