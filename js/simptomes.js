@@ -33,6 +33,8 @@ function ShowPopupMessage(text) {
 
   p.innerHTML = text
 
+  div.setAttribute('onclick','RemoveAllPopupMessages()')
+
   div.prepend(div1)
   div.prepend(p)
   document.body.prepend(div)
@@ -43,6 +45,13 @@ function ShowPopupMessage(text) {
     },
     2000
   );
+}
+
+function RemoveAllPopupMessages(){
+  var div = document.getElementsByClassName('popup_message')
+  for (var i = div.length - 1; i >= 0; i--) {
+    div[i].style.animation = 'RemovePopup .4s ease-in-out forwards'
+  }
 }
 
 function AddSimptome(num){
