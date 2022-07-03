@@ -1,0 +1,76 @@
+#anketa{
+	background: white;
+	width: 100vw;
+	height: 100vh;
+	box-shadow: 0 0 10000px rgba(0,0,0,1);
+	position: absolute;
+	display: none;
+	z-index: 10;
+	animation: show_anketa;
+}
+.anketa_header{
+	display: flex;
+	font-size: 4vh;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5%;
+}
+.anketa_header ion-icon{
+	transition: .3s;
+}
+.anketa_header ion-icon:hover, .anketa_header ion-icon:focus{
+	transform: rotate(180deg);
+	color: var(--accent);
+	transition: .3s;
+}
+.anketa_1line input{
+	font-size: 13pt;
+	№text-align: center;
+	width: 100%;
+	border: none;
+	margin-left: 4px;
+	border-bottom: 1px solid black;
+	transition: .3s;
+}
+.anketa_1line input:focus{
+	outline: none;
+	transition: .3s;
+}
+.anketa_1line{
+	margin-top: 20px;
+	font-size: 13pt;
+	display: flex;
+	width: 90%;
+	margin-left: 5%;
+}
+.anketa_1line ion-icon{
+	font-size: 20pt;
+	position: absolute;
+	right: 5%;
+}
+
+
+@keyframes show_anketa{
+	from{
+		transform: translateX(-100vw);
+		opacity: 0;
+		border-right: 5px solid var(--accent2);
+	}
+	to{
+		transform: translateX(0px);
+		opacity: 1;
+		display: block;
+	}
+}
+@keyframes remove_anketa{
+	from {
+		transform: translateX(0px);
+		opacity: 1;
+		display: block;
+	}
+	to {
+		transform: translateX(-100vw);
+		opacity: 0;
+		display: none;
+	}
+}

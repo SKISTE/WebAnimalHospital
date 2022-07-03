@@ -45,6 +45,15 @@ body{
 .simptomes div:not(:last-child){
 	margin-right: 5px;
 }
+.simptome:hover, .simptome:focus{
+	background: var(--accent);
+	color: white;
+	transition: .2s;
+}
+.simptome{
+	transition: .2s;
+	cursor: pointer;
+}
 .simptomes div{
 	user-select: none;
 	padding: 3px;
@@ -62,6 +71,13 @@ body{
 	font-size: 12pt;
 	border: 2px solid var(--accent);
 	padding: 5px;
+	transition: .3s;
+	cursor: pointer;
+}
+.added_simptomes:hover, .added_simptomes:focus{
+	background: var(--accent);
+	color: white;
+	transition: .3s;
 }
 #Added_simptomes_window{
 	display: none;
@@ -79,7 +95,7 @@ body{
 }
 
 .button_for_close:hover, .button_for_close:focus{
-	transform: rotate(180deg);
+	transform: rotate(90deg);
 	transition: .3s;
 	color: var(--accent3);
 }
@@ -105,9 +121,8 @@ body{
 }
 .button_for_remove{
 	font-size: 25pt;
-	margin-left: 50px;
+	cursor: pointer;
 	color: var(--accent2);
-	width: 10%;
 }
 #spisok_blyat{
 	margin-top: 50px;
@@ -117,33 +132,44 @@ body{
 }
 #block_with_list_bolezni{
 	position: absolute;
-	width: 100%;
+	width: calc(100vw - 10vw);
 	bottom: 0;
-	height: 5vh;
+	height: 15vh;
+	z-index: 1;
 	transition: .4s;
 	overflow-y: scroll;
 	border-top-left-radius: 20px;
 	border-top-right-radius: 20px;
-	border-top: 3px solid black;
+	border: 3px solid black;
+	border-bottom: none;
 	background: #e6e6e6;
+	overflow-y: hidden;
+
+	display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 @keyframes unpack_bolezni{
-	from{height: 5vh;}
-	to{height: 90vh;}
+	from{height: 15vh; overflow-y: hidden;}
+	to{height: 65vh; overflow-y: scroll;}
 }
 @keyframes pack_bolezni{
-	from{height: 90vh;}
-	to{height: 5vh;}
+	from{height: 65vh; overflow-y: scroll;}
+	to{height: 15vh; overflow-y: hidden;}
 }
 #bolezni_list{
 	margin-top: 40px;
 	height: calc(100% - 40px);
+	z-index: 5;
+	width: 90%;
 }
 .block_with_bolezn{
 	display: flex;
 	border-bottom: 1px solid black;
 	padding-top: 5px;
 	padding-bottom: 5px;
+	z-index: 4;
 	justify-content: space-between;
 	width: 100%;
 }
@@ -161,7 +187,6 @@ body{
 }
 .bolezn_info{
 	font-size: 25pt;
-	width: 10%;
 	align-items: center;
 }
 .header_for_info_window{
@@ -194,6 +219,28 @@ body{
 	padding-right: 10px;
 	height: 90%;
 	overflow-y: scroll;
+}
+.thirdzone ion-icon:hover, .thirdzone ion-icon:focus{
+	color: var(--accent);
+	transition: .2s;
+}
+.thirdzone ion-icon{
+	transition: .2s;
+	cursor: pointer;
+}
+.thirdzone{
+	transition: .4s;
+	align-self: stretch;
+	margin-left: 5vw;
+	margin-top: 50vh;
+	font-size: 5vh;
+}
+.gradient_for_bolezni{
+	background: linear-gradient(rgba(0, 0, 0, 0), #e6e6e6);
+	width: 100%;
+	height: 100%;
+	z-index: 3;
+	position: absolute;
 }
 @keyframes slideuptocenter{
 	0%{transform: translateY(-100vh);display: block; opacity: 0;}

@@ -29,7 +29,7 @@ function ShowPopupMessage(text) {
   div1.classList.add('popup_dur')
   p.classList.add('popup_text')
 
-  div.style.zIndex = 10
+  div.style.zIndex = 1000
 
   p.innerHTML = text
 
