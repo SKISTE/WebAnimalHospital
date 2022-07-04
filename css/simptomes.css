@@ -229,10 +229,11 @@ body{
 	cursor: pointer;
 }
 .thirdzone{
+	position: absolute;
 	transition: .4s;
 	align-self: stretch;
 	margin-left: 5vw;
-	margin-top: 50vh;
+	margin-top: 75vh;
 	font-size: 5vh;
 }
 .gradient_for_bolezni{

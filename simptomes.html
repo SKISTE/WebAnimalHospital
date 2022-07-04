@@ -17,6 +17,10 @@
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
+	<div class='thirdzone'>
+		<ion-icon name="print-outline"></ion-icon>
+		<ion-icon name="reader-outline" onclick="show_anketa()" id='button_anketa'></ion-icon>
+	</div>
 	<div id='Added_simptomes_window'>
 		<ion-icon name="close-outline" class='button_for_close' onclick='ClosePopup()'></ion-icon>
 		<div style="position: absolute; margin:10px;font-size: 12pt;">Добавленные симптомы</div>
@@ -36,23 +40,23 @@
 			<ion-icon name="chevron-back-circle-outline" onclick='remove_anketa()'></ion-icon>
 		</div>
 		<div class="anketa_1line">
-			<input type="text" placeholder="ФИО Владельца">
-			<input style="width: 14%" type="text" name="" placeholder="ДД">
+			<input type="text" placeholder="ФИО Владельца" id='anketa_fio'>
+			<input style="width: 14%" type="text" name="" placeholder="ДД" id='anketa_day'>
 			<span>/</span>
-			<input style="width: 40%" type="text" name="" placeholder="Месяц">
+			<input style="width: 40%" type="text" name="" placeholder="Месяц" id='anketa_month'>
 			<span>/</span>
-			<input style="width: 20%" type="text" name="" placeholder="Год">
+			<input style="width: 20%" type="text" id='anketa_year' name="" placeholder="Год">
 		</div>
 		<div class="anketa_1line">
-			<input type="text" placeholder="Адрес проживания">
+			<input type="text" placeholder="Адрес проживания" id='anketa_adres'>
 		</div>
 		<div class="anketa_1line">
-			<input type="text" placeholder="Кличка">
+			<input type="text" id='anketa_animalname' placeholder="Кличка">
 		</div>
 		<div class="anketa_1line">
-			<input type="text" placeholder="Возраст">
-			<input type="text" placeholder="Пол">
-			<input type="text" style="width: 200%;" placeholder="Порода">
+			<input type="text" placeholder="Возраст" id='anketa_age'>
+			<input type="text" placeholder="Пол" id='anketa_sex'>
+			<input type="text" style="width: 200%;" placeholder="Порода" id='anketa_poroda'>
 		</div>
 		<div class="anketa_1line">
 			<ion-icon name="save"></ion-icon>
@@ -71,11 +75,6 @@
 		<div class="simptomes" id='list_simptomes'>	</div>
 		<div style='display: none;' id='added_simptomes_id'></div>
 		<input type="button" name="" value="Добавленные симптомы" onclick="ShowPopup()" class="added_simptomes">
-
-		<div class='thirdzone'>
-			<ion-icon name="print-outline"></ion-icon>
-			<ion-icon name="reader-outline" onclick="show_anketa()" id='button_anketa'></ion-icon>
-		</div>
 		<div id="block_with_list_bolezni">
 			<!-- <div class="gradient_for_bolezni"></div> -->
 			<div style="position:absolute;background: #999999; top: 10px;width: 20%; height: 10px; left: 40%;border-radius: 20px; z-index: 5;" id='button_for_close_open_bolezni' onclick="OpenBolezniList()"></div>
