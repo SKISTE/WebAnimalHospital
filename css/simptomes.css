@@ -81,7 +81,8 @@ body{
 }
 #Added_simptomes_window{
 	display: none;
-	margin: 5%;
+	margin-top: 5vh;
+	margin-left: 5vw;
 	opacity: 1;
 	transition: .3s;
 	position: absolute;
@@ -195,22 +196,19 @@ body{
 	min-height: 10%;
 	justify-content: space-between;
 }
-.header_for_info_window ion-icon{
-	width: 10%;
-}
 .header_for_info_window div{
 	font-size: 19pt;
 	padding: 10px 0 0 10px;
 	width: 90%;
 }
 #Info_window{
-	margin: 5%;
+	margin-top: 5vh;
+	margin-left: 5vw;
 	display: none;
 	position: absolute;
 	width: 90%;
 	height: 90%;
 	background: white;
-	border: 3px solid black;
 	z-index: 2;
 	box-shadow: 0 0 100px rgba(0,0,0,1);
 }

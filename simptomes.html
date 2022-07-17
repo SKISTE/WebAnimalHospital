@@ -11,14 +11,47 @@
 	<link rel="stylesheet" type="text/css" href="css/simptomes.css">
 	<link rel="stylesheet" type="text/css" href="css/anketa.css">
 	<script type="text/javascript" src="js/dropdown.js"></script>
-	
-	<script type="text/javascript" src="js/onpreload.js"></script>
+
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
 </head>
 <body>
+	<div id='anketa_pdf'>
+		<div id="anketa_pdf_wrapper">
+			<div class="anketa_pdf_line">
+				<div class="anketa_pdf_name">Владелец  </div>
+				<div id="anketa_pdf_name_inp" class="anketa_pdf_inp">Скибинский Степан Юрьевич</div>
+			</div>
+			<div class="anketa_pdf_line">
+				<div class="anketa_pdf_name">Адрес проживания  </div>
+				<div id="anketa_pdf_name_adres" class="anketa_pdf_inp">г. Балаково ул. Шевченко д.83 кв.23</div>
+			</div>
+			<div class="anketa_pdf_line">
+				<div class="anketa_pdf_name">Кличка животного  </div>
+				<div id="anketa_pdf_name_adres" class="anketa_pdf_inp">Жопашник</div>
+			</div>
+			<div class="anketa_pdf_line">
+				<div class="anketa_pdf_name">Возраст</div>
+				<div id="anketa_pdf_name_adres" class="anketa_pdf_inp" style="width:15%; text-align: center;">18</div>
+				<div class="anketa_pdf_name">Пол</div>
+				<div id="anketa_pdf_name_adres" class="anketa_pdf_inp" style="width:10%; text-align: center;">М</div>
+				<div class="anketa_pdf_name"> Порода  </div>
+				<div id="anketa_pdf_name_adres" class="anketa_pdf_inp">Человек обычный</div>
+			</div>
+			<div class="anketa_pdf_line">
+				<div class="anketa_pdf_name">Жалобы:  </div>
+				<div id="anketa_pdf_name_adres" class="anketa_pdf_inp jalobi">Тут будет, много текста, сгененерированного после, нажатия на кнопку</div>
+			</div>
+			<div class="anketa_pdf_line">
+				<div class="anketa_pdf_name">Диагноз:  </div>
+				<div id="anketa_pdf_name_adres" class="anketa_pdf_inp jalobi">Здесь мало текста</div>
+			</div>
+		</div>	
+	</div>
 	<div class='thirdzone'>
-		<ion-icon name="print-outline"></ion-icon>
+		<ion-icon name="print-outline" onclick='generate_pdf()'></ion-icon>
 		<ion-icon name="reader-outline" onclick="show_anketa()" id='button_anketa'></ion-icon>
 	</div>
 	<div id='Added_simptomes_window'>
@@ -59,13 +92,19 @@
 			<input type="text" style="width: 200%;" placeholder="Порода" id='anketa_poroda'>
 		</div>
 		<div class="anketa_1line">
-			<ion-icon name="save"></ion-icon>
+			<input type="text" id='anketa_doctor' placeholder="ФИО врача">
 		</div>
+		<div class="anketa_1line">
+			<input type="text" id='anketa_hospital' placeholder="Название больницы">
+		</div>
+		<!-- <div class="anketa_1line">
+			<ion-icon name="save"></ion-icon>
+		</div> -->
 	</div>
 
 	<div class="header">
 		<a href="index.html" id='header_name'>Карманная вет.клиника</a>
-		<span onclick='GoSomeSettings()'><ion-icon name="ellipsis-vertical" class='Settings'></ion-icon></span>
+		<span onclick='GoSomeSettings()'><ion-icon name="ellipsis-vertical" class='Settings' style='margin-right: 1vw;'></ion-icon></span>
 		<div id="Settings" class="dropdown-content1">
 			<a href="#" onclick="Authors()">Авторы</a>
 		</div>
@@ -87,6 +126,15 @@
 	<script type="text/javascript" src="js/massiv.js"></script>
 	<script type="text/javascript" src="js/simptomes.js"></script>
 	<script type="text/javascript" src="js/anketa.js"></script>
+
+	<!--<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script> -->
+	<script src='js/pdfmake.min.js'></script>
+	<script src='js/vfs_fonts.js'></script>
+	<script type="text/javascript" src="js/onpreload.js"></script>
+
+	<script type="text/javascript" src="js/createpdf.js"></script>
 	
 </body>
 </html>

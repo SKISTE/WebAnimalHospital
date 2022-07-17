@@ -1,3 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Inter&display=swap');
+#anketa_pdf{
+	width: 2480px;
+	height: 3508px;
+	position: absolute;
+	background: url("../media/anketa_bg.svg");
+	background-size: 100% 100%;
+	z-index: 10000;
+	display: none;
+}
+#anketa_pdf .anketa_pdf_line{
+	font-size: 80px;
+	font-family: 'Inter', sans-serif;
+	display: flex;
+	margin-top: 20px;
+}
+.anketa_pdf_inp{
+	border-bottom: 10px solid black;
+	width: 100%;
+	background-size: 1px 1em;
+    background-size: 1px 1em;
+	display: inline;
+}
+#anketa_pdf_name_inp{
+	width: 100%;
+	height: 100px;
+	#border-bottom: 10px solid black;
+}
+#anketa_pdf_wrapper{
+	№background: pink;
+	position: absolute;
+	height: calc(100% - 800px);
+	margin-left: 150px;
+	margin-top: 430px;
+	width: calc(100% - 300px);
+}
+.jalobi{
+	border-bottom: none;
+}
+
+
+
+
+
+
+
+
+
+
 #anketa{
 	background: white;
 	width: 100vw;
