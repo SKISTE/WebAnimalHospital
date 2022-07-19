@@ -9,8 +9,11 @@ function generate_pdf(){
 	anketa_age = document.getElementById('anketa_age').value
 	anketa_sex = document.getElementById('anketa_sex').value
 	anketa_poroda = document.getElementById('anketa_poroda').value
-	anketa_doctor = document.getElementById('anketa_doctor').value
-	anketa_hospital = document.getElementById('anketa_hospital').value
+	settings_hospital_name = localStorage.getItem('settings_hospital_name')
+	settings_hospital_adres = localStorage.getItem('settings_hospital_adres')
+	settings_hospital_email = localStorage.getItem('settings_hospital_email')
+	settings_hospital_phone = localStorage.getItem('settings_hospital_phone')
+	settings_hospital_site = localStorage.getItem('settings_hospital_site')
 	console.groupCollapsed('generate_pdf info')
 	console.log('anketa_fio: '+anketa_fio)
 	console.log('anketa_day: '+anketa_day)
@@ -21,8 +24,11 @@ function generate_pdf(){
 	console.log('anketa_age: '+anketa_age)
 	console.log('anketa_sex: '+anketa_sex)
 	console.log('anketa_poroda: '+anketa_poroda)
-	console.log('anketa_doctor: '+anketa_doctor)
-	console.log('anketa_hospital: '+anketa_hospital)
+	console.log('settings_hospital_name: '+settings_hospital_name)
+	console.log('settings_hospital_adres: '+settings_hospital_adres)
+	console.log('settings_hospital_email: '+settings_hospital_email)
+	console.log('settings_hospital_phone: '+settings_hospital_phone)
+	console.log('settings_hospital_site: '+settings_hospital_site)
 	console.groupEnd()
 	createPdf()
 }
@@ -55,10 +61,10 @@ function createPdf() {
 		
 		pageSize:'A4',
 		images:{
-			bg:'https://i.imgur.com/qnGFvc7.png'
+			bg:'https://i.imgur.com/KeXQAYi.jpg'
 		},
 		pageOrientation:'portrait',
-		pageMargins:[40,25,40,0],
+		pageMargins:[40,10,40,0],
 		background: {
 			image: 'bg',
 			width: 595,
@@ -67,15 +73,46 @@ function createPdf() {
 
 		content: [
 		{
-			text: anketa_hospital,
-			fontSize: 20,
-			alignment: 'left',
+			text: settings_hospital_name,
+			fontSize: 18,
+			alignment: 'center',
 			color:'#ffffff',
-			margin: [50,0],
 			lineHeight:1.4
 		},
 		{
-			text: 'Карта пациента',
+			text: "Адрес: "+settings_hospital_adres,
+			fontSize:13,
+			alignment:'left',
+			color:'#ffffff',
+			lineHeight:1
+		},
+		{
+			text: "E-mail: "+settings_hospital_email,
+			fontSize:13,
+			alignment:'left',
+			color:'#ffffff',
+			lineHeight:1
+		},
+		{
+			text: "Телефон: "+settings_hospital_phone,
+			fontSize:13,
+			alignment:'left',
+			color:'#ffffff',
+			lineHeight:1
+		},
+		{
+			text: "Сайт: "+settings_hospital_site,
+			fontSize:13,
+			alignment:'left',
+			color:'#ffffff',
+			lineHeight:1
+		},
+
+
+
+
+		{
+			text: 'Лист назначения',
 			fontSize: 30,
 			alignment: 'center',
 			margin:[0,50],
@@ -205,20 +242,6 @@ function createPdf() {
 					text:'Ну здесь будет диагоз, пока хз как его нужно будет сделать',
 					style:'value',
 					width:'*',
-				},
-		]},
-		{
-			columns:[
-				{
-					text:'ФИО врача:',
-					width:150,
-					style: 'name',
-				},
-				{
-					text:anketa_doctor,
-					style:'value',
-					width:'*',
-					alignment:'right: '
 				},
 		]},
 	],

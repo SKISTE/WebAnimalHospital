@@ -1,11 +1,14 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+*{
+	font-family: 'Inter', sans-serif;
+}
 
 :root{
-	--accent: #59BA6D;
-	--accent2: #3B7A47;
-	--accent3: #78FA92;
-	--accent4: #1C3B22;
-	--accent5: #6CE083;
+	--accent: #7C7AFF;
+	--accent2: #6F8EE8;
+	--accent3: #88C5FF;
+	--accent4: #6FCDE8;
+	--accent5: #7AFFF9;
 }
 body{
 	#background: gray;
@@ -30,6 +33,7 @@ body{
 	margin-top: 2.5%;
 	margin-left: 2.5%;
 	background: var(--accent4);
+	outline: 1px solid black;
 	opacity: .95;
 	animation: popup 2s;
 	z-index: 1;

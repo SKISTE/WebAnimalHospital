@@ -1,0 +1,65 @@
+#SettingsMenu{
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 10;
+    background: #fff;
+    opacity: 0;
+}
+.SettingsHeader{
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.SettingsHeader div{
+    font-size: 3vh;
+    color: black;
+}
+.SettingsHeader ion-icon{
+    font-size: 4vh;
+    cursor: pointer;
+    transition: .3s;
+}
+.SettingsHeader ion-icon:hover{
+    color: var(--accent);
+    transform: rotate(90deg);
+    transition: .3s;
+}
+.SettingsWrapper{
+    padding-left: 4%;
+    padding-right: 4%;
+    width: 92%;
+}
+.SettingsWrapper .Settings1line{
+    margin-top: 30px;
+}
+.Settings1line .save{
+    position: absolute;
+    right: 4%;
+    font-size: 4vh;
+    cursor: pointer;
+    transition: .3s;
+}
+.save:hover{
+    color: var(--accent);
+    transition: .3s;
+}
+.Settings1line input{
+    outline: none;
+    border: none;
+    border-bottom: black 1px solid;
+    width: 100%;
+    font-size: 16px;
+}
+
+@keyframes open_settings{
+    from{opacity: 0}
+    to{opacity: 1}
+}
+@keyframes close_settings{
+    from{display: block; opacity: 1;}
+    to{display: none; opacity: 0;}
+}

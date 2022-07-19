@@ -10,45 +10,42 @@
 	<link rel="stylesheet" type="text/css" href="css/dropdown.css">
 	<link rel="stylesheet" type="text/css" href="css/simptomes.css">
 	<link rel="stylesheet" type="text/css" href="css/anketa.css">
+	<link rel="stylesheet" type="text/css" href="css/settings.css">
 	<script type="text/javascript" src="js/dropdown.js"></script>
 
 	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<script src="js/settings.js"></script>
 
 
 </head>
 <body>
-	<div id='anketa_pdf'>
-		<div id="anketa_pdf_wrapper">
-			<div class="anketa_pdf_line">
-				<div class="anketa_pdf_name">Владелец  </div>
-				<div id="anketa_pdf_name_inp" class="anketa_pdf_inp">Скибинский Степан Юрьевич</div>
+	<div id="SettingsMenu">
+		<div class="SettingsHeader">
+			<div>Настройки</div>
+			<ion-icon name="close-circle-outline" onclick="CloseSettingsMenu()"></ion-icon>
+		</div>
+		<div class="SettingsWrapper">
+			<div class="Settings1line">
+				<input type="text" id="settings_hospital_name" placeholder="Название поликлиники">
 			</div>
-			<div class="anketa_pdf_line">
-				<div class="anketa_pdf_name">Адрес проживания  </div>
-				<div id="anketa_pdf_name_adres" class="anketa_pdf_inp">г. Балаково ул. Шевченко д.83 кв.23</div>
+			<div class="Settings1line">
+				<input type="text" id="settings_hospital_adres" placeholder="Адрес поликлиники">
 			</div>
-			<div class="anketa_pdf_line">
-				<div class="anketa_pdf_name">Кличка животного  </div>
-				<div id="anketa_pdf_name_adres" class="anketa_pdf_inp">Жопашник</div>
+			<div class="Settings1line">
+				<input type="text" id="settings_hospital_email" placeholder="e-mail поликлиники">
 			</div>
-			<div class="anketa_pdf_line">
-				<div class="anketa_pdf_name">Возраст</div>
-				<div id="anketa_pdf_name_adres" class="anketa_pdf_inp" style="width:15%; text-align: center;">18</div>
-				<div class="anketa_pdf_name">Пол</div>
-				<div id="anketa_pdf_name_adres" class="anketa_pdf_inp" style="width:10%; text-align: center;">М</div>
-				<div class="anketa_pdf_name"> Порода  </div>
-				<div id="anketa_pdf_name_adres" class="anketa_pdf_inp">Человек обычный</div>
+			<div class="Settings1line">
+				<input type="text" id="settings_hospital_phone" placeholder="Телефон поликлиники">
 			</div>
-			<div class="anketa_pdf_line">
-				<div class="anketa_pdf_name">Жалобы:  </div>
-				<div id="anketa_pdf_name_adres" class="anketa_pdf_inp jalobi">Тут будет, много текста, сгененерированного после, нажатия на кнопку</div>
+			<div class="Settings1line">
+				<input type="text" id="settings_hospital_site" placeholder="Сайт поликлиники">
 			</div>
-			<div class="anketa_pdf_line">
-				<div class="anketa_pdf_name">Диагноз:  </div>
-				<div id="anketa_pdf_name_adres" class="anketa_pdf_inp jalobi">Здесь мало текста</div>
+			<div class="Settings1line">
+				<ion-icon name="save-outline" class="save" onclick="SaveSettings()"></ion-icon>
 			</div>
-		</div>	
+		</div>
+
 	</div>
 	<div class='thirdzone'>
 		<ion-icon name="print-outline" onclick='generate_pdf()'></ion-icon>
@@ -107,6 +104,7 @@
 		<span onclick='GoSomeSettings()'><ion-icon name="ellipsis-vertical" class='Settings' style='margin-right: 1vw;'></ion-icon></span>
 		<div id="Settings" class="dropdown-content1">
 			<a href="#" onclick="Authors()">Авторы</a>
+			<a href="#" onclick="OpenSettingsMenu()">Настройки</a>
 		</div>
 	</div>
 	<div class="wrapper">
