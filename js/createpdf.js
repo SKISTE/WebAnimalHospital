@@ -107,16 +107,12 @@ function createPdf() {
 			color:'#ffffff',
 			lineHeight:1
 		},
-
-
-
-
 		{
 			text: 'Лист назначения',
-			fontSize: 30,
+			fontSize: 18,
 			alignment: 'center',
-			margin:[0,50],
-			lineHeight:.1
+			margin:[0,40],
+			lineHeight:.01
 		},
 		{
 			columns: [
