@@ -8,7 +8,6 @@ function updatesimptomes() {
     else{
       document.getElementsByClassName('simptome')[i].classList.remove('simptomes_shown')
     }
-    
   }
 }
 input.oninput = updatesimptomes;
@@ -24,21 +23,15 @@ function ShowPopupMessage(text) {
   var div = document.createElement('div')
   var div1 = document.createElement('div')
   var p = document.createElement('p')
-
   div.classList.add('popup_message')
   div1.classList.add('popup_dur')
   p.classList.add('popup_text')
-
   div.style.zIndex = 1000
-
   p.innerHTML = text
-
   div.setAttribute('onclick','RemoveAllPopupMessages()')
-
   div.prepend(div1)
   div.prepend(p)
   document.body.prepend(div)
-
   setTimeout(
     () => {
       div.remove()

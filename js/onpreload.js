@@ -19,7 +19,6 @@ function preload() {
 		document.getElementById('color5').value = localStorage.getItem('--accent5')
 	}
 }
-
 function CONSOLE_ERROR(e) {
 	console.error(`${e.name} : ${e.message} : ${e.stack}`)
 }
